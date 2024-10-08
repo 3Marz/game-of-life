@@ -22,7 +22,7 @@ function make2dArray(w,h){
 
 
 const world_size = {x:100, y:100}
-const GRID_SIZE = 5;
+let GRID_SIZE = 5;
 var world = make2dArray(world_size.x, world_size.y);
 
 function drawMap(map){ 
@@ -81,26 +81,21 @@ function nextGen(map){
 
 var paused = true
 
-function handleResize() {
-	let factor = Math.floor(window.innerWidth/90)
-	if (factor > 12) { factor = 12 }
-	canvas.style.width = (50*factor) + "px" 
-	canvas.style.height = (50*factor) + "px" 
-}
-
-addEventListener("resize", () => {
-	handleResize()
-})
-
 function setup(){
 	createCanvas(500, 500, canvas)
-	handleResize()
 }
+
+let mouseX = 0;
+let mouseY = 0;
 
 function draw(){
 	background(12)
 	drawMap(world)
 
+	canvas.addEventListener("mousemove", (e) => {
+		mouseX = (e.pageX - canvas.offsetLeft);
+		mouseY = (e.pageY - canvas.offsetTop);
+	})
 	var cmx = floor((mouseX)/GRID_SIZE),
 			cmy = floor((mouseY)/GRID_SIZE)
 
