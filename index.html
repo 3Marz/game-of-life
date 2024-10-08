@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Game Of Life</title>
+	<script type="module" src="src/p5.js"></script>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			place-items: center;
+			align-items: center;
+			background: #2a2a2a;
+		}
+		canvas {
+			display: block;
+			margin: 0 auto;
+			image-rendering: pixelated;
+			border: 10px solid gray;
+		}
+		.continer {
+			color: white;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		h1 {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Game Of Life</h1>
+	<div class="continer">
+		<div>
+			<h1>Keymaps :</h1>
+			<ul>
+				<li>Q: reset the canvas</li>
+				<li>R: Randomize the canvas</li>
+				<li>Left Mouse to draw</li>
+				<li>Right Mouse to delete</li>
+				<li>Space to Pause</li>
+			</ul>
+		</div>
+		<canvas id="canvas" />
+	</div>
+	
+	<script src="src/main.js"></script>
+	
+</body>
+</html>
